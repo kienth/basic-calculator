@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/student/Desktop/mycal.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Calculator of Kienth</title>
+</head>
+<body>
+	<input type="number" placeholder="0" id="ndisplay">
+	<br>
+	<br>
+
+	<button onclick="attachNumber(this)">1</button>
+	<button onclick="attachNumber(this)">2</button>
+	<button onclick="attachNumber(this)">3</button>
+	<button onclick="attachNumber(this)">4</button>
+	<button onclick="attachNumber(this)">5</button>
+	<button onclick="attachNumber(this)">6</button>
+	<button onclick="attachNumber(this)">7</button>
+	<button onclick="attachNumber(this)">8</button>
+	<button onclick="attachNumber(this)">9</button>
+	<button onclick="attachNumber(this)">0</button>
+
+	<button id="nplus" onclick="doAdd()">+</button>
+	<button id="nminus" onclick="doSubtract()">-</button>
+	<button id="ntimes" onclick="doMultiply()">*</button>
+	<button id="ndivide" onclick="doDivide()">/</button>
+	<button id="nequal" onclick="result()">=</button>
+
+	<script type="text/javascript">
+		let n = document.getElementById('ndisplay');
+		let numberHolder;
+		let optr;
+
+		function attachNumber(e){
+			n.value+= e.innerHTML;
+		}
+
+		function doAdd(){
+			optr = "+"
+			numberHolder = parseInt(n.value);
+			n.value = "";
+		}
+
+		function doSubtract(){
+			optr = "-"
+			numberHolder = parseInt(n.value);
+			n.value = "";
+		}
+
+		function doMultiply(){
+			optr = "*"
+			numberHolder = parseInt(n.value);
+			n.value = "";
+		}
+
+		function doDivide(){
+			optr = "/"
+			numberHolder = parseInt(n.value);
+			n.value = "";
+		}
+
+		function result(){
+			switch (optr){
+				case "+":
+					n.value = numberHolder + parseInt(n.value);
+					break;
+				case "-"
+					n.value = numberHolder - parseInt(n.value);
+					break;
+				case "*"
+					n.value = numberHolder * parseInt(n.value);
+					break;
+				case "/"
+					n.value = numberHolder / parseInt(n.value);
+					break;
+
+				default:
+					console.log('no operator defined');
+					break;
+			}
+
+		}
+	</script>
+
+
+
+
+</body></html>
